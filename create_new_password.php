@@ -1,12 +1,6 @@
 <?php
-    session_start();
-    
-    if(!isset($_SESSION['pwdReset'])){
-        header('Location: index.php');
-        exit();
-    }
+session_start();
 ?>
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -17,22 +11,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/forgot_password.css" />
 	
 </head>
 
 <body>
-<script type="text/javascript"> 
-var error_login = false; 
-var logged = false; 
-</script>
-
 	<div id="container">
-	
+	   
 		<div id="menu" class="menu">
+		    <div id="space">           
+			</div>
 			<div id="logo_name">
 			Mediapp ⚕
 			</div>
-			<div id="login" >           
+			<div id="login">           
                 <p title="Logout" style="margin:0px;"><a  href="logout.php">
                 <img src="img/home.png" class="login_icon">
                 </a></p>
@@ -45,29 +37,47 @@ var logged = false;
 		</nav>
 
 	    <div id="content">	
-            
+		<div class="info">
+		<?php
+
+			$selector = $_GET["selector"];
+			$validator = $_GET["validator"];
+
+			if(empty($selector) || empty($validator)){
+				echo '<div class="info"> <div class="wrong";> Something went wrong </div>  Could not validate your request! </div>';
+			}
+			else{
+			if(ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false ){
+		?>
+			<form action="reset_password.php" method="post">
+				<h3>Reset your password!</h3>
+				<?php
+				 	if(isset($_SESSION['error_new'])){
+						echo $_SESSION['error_new'];
+					 	unset($_SESSION['error_new']);;
+					}	 
+				?>
+				<input type="hidden" name="selector" value='<?php echo $selector; ?>'>
+				<input type="hidden" name="validator" value='<?php echo $validator; ?>'>
+				<input class="login" type="password" name="pwd" placeholder="Enter a new password..." id="password_register" autocomplete="on" onkeyup="checkForSpaces(this)" maxlength="20" required><br>
+				<input class="login"type="password" name="pwd_repeat" placeholder="Repeat new password..."  id="confirm_password" autocomplete="on" required><br>
+				<input type="submit" value="Reset password" class="submit login"/>
+			</form>
+		<?php
+			}
+			else{
+				echo '<div class="info"> <div class="wrong";> Something went wrong </div> Your reset password request is invalid! </div>';	
+			}
+			}
+		?>
 		</div>
-        
-		
-	   
-		
-		<div id="footer">
-			<div>
-			e-mail: mediappbot@gmail.com
-			<br>
-			phone nr: 7769 687 365
-			<br><br>
-			In case of a serious situation, please call the nearest clinic
-			<br>
-			&copy;Mediapp 2020
-			</div>
 		</div>
 	
 	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/jquery-3.5.1.min.js"></script>
-	<script src="js/code.js"></script>
+	<script src="js/login.js"></script>
 
 
 </body>
