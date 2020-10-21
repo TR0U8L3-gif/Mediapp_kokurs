@@ -70,6 +70,21 @@ session_start();
                 else{
                     $userEmail=$_POST['forgot_email'];
 
+                    $result = $connect->query("SELECT username FROM users WHERE email='$userEmail'");
+                    if(!$result) throw new Exception($connect->error);
+                    else{
+                        $mails = $result->num_rows;
+                        if($mails==0){
+                        $_SESSION['error_reset']='<span style="color:red">There is not an account with such an email address!</span><br>';
+                        $connect->close();  
+                        header('Location: index.php');
+                        exit();
+                        }
+                        else{
+                        $username = $result    
+                        }
+                    }
+
                     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
 
                     $stmt = mysqli_stmt_init($connect);
@@ -104,7 +119,7 @@ session_start();
                     $message .= '<a href="'.$url.'">'.$url.'</a></p>';
                     
                     $mail->setFrom('mediappbot@gmail.com', 'Mediapp');
-                    $mail->addAddress($to);               
+                    $mail->addAddress($to, $username);               
                     $mail->addReplyTo('mediappbot@gmail.com');
 
 

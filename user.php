@@ -4,7 +4,15 @@
     if(!isset($_SESSION['logged'])){
         header('Location: index.php');
         exit();
-    }
+	}
+	else{
+
+        $name = $_SESSION['name'];
+        $surname = $_SESSION['surname'];
+        $email = $_SESSION['email'];
+        $username = $_SESSION['username'];
+		$admin = $_SESSION['admin'];
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -17,10 +25,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/user.css" />
 	
 </head>
 
 <body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+
 <script type="text/javascript"> 
 var error_login = false; 
 var logged = false; 
@@ -55,6 +68,15 @@ var logged = false;
 		<nav id="mySidenav" class="sidenav">
 			
 			<a href="#User">User info</a>
+			<a href="#Fell">How you feel?</a>
+			<?php
+				if(isset($admin)&&$admin>0){
+					echo 
+					'<a href="#Disease" class="big">Add a new <br>disease to assistant</a>',
+					'<a href="#Article" class="big">Add a new<br>blog article</a>',
+					'<a href="#Admin" class="big">Add/ remove an<br>administrator</a>';	
+				}
+			?>
 			<a href="#footer">Contact</a>
 		</nav>
         
@@ -71,6 +93,59 @@ var logged = false;
             }
             ?>
             </div>
+			
+			<div id="Disease" class="test">
+			<h1>Add disease</h1>
+				<div class="disease">
+				<p>You can add a new disease to the database of our medical assistant. Remember that the form should be understandable to everyone and the maximum length of your speech cannot exceed 280 characters</p>
+				<input id="disease_name" type="text" name="name" placeholder="Disease name" maxlength="280" required /> <br>
+				<input id="disease_description" type="text" name="description" placeholder="Disease description" maxlength="280" required /> <br>
+				<input id="disease_symptoms" type="text" name="symptoms" placeholder="Disease symptoms" maxlength="280" required /> <br>
+				<input id="disease_tips" type="text" name="tips" placeholder="Disease tips" maxlength="280" required /> <br>
+				<button class="add_disease">Add new disease to assistant</button>
+				</div>
+			</div>
+			<div id="Article" class="test">
+			</div>
+			<div id="Admin" class="test">
+				<div class="admin">
+					<h1>Add admin</h1>
+						<form action="add_admin.php" method="post"> 
+							<div class="row">
+								<p>You can add a new administrator to help manage the site, but be careful who you assign this function to</p>
+									<?php
+									if(isset($_SESSION['error_add_a'])){
+										echo $_SESSION['error_add_a'];
+										unset($_SESSION['error_add_a']);;
+									}	 
+									?>
+								<input class="login" type="text" name="newAdmin" placeholder="New admin" required /> <br>
+								<input class="login" type="password" name="password" placeholder="Your password" autocomplete="on" required /> <br>		
+								<input type="submit" value="Add new admin" class="submit login"/>
+							</div>
+						</form>
+				</div>
+				<div class="admin">
+					<h1>Remove admin</h1>
+						<form action="remove_admin.php" method="post"> 
+							<div class="row">
+								<p>Did not fulfill its role? Think about this decision three times, but unfortunately sometimes you have to ...</p>
+									<?php
+									if(isset($_SESSION['error_remove_a'])){
+										echo $_SESSION['error_remove_a'];
+										unset($_SESSION['error_remove_a']);;
+									}	 
+									?>
+								<input class="login" type="text" name="newAdmin" placeholder="New admin" required /> <br>
+								<input class="login" type="password" name="password" placeholder="Your password" autocomplete="on" required /> <br>		
+								<input type="submit" value="Remove admin" class="submit login"/>
+							</div>
+						</form>
+					<div class="margin"></div>
+				</div>
+			</div>
+
+
 		</div>
         
 		
@@ -89,11 +164,6 @@ var logged = false;
 		</div>
 	
 	</div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/code.js"></script>
-
-
 </body>
 </html>

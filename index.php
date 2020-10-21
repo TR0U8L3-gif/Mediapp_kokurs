@@ -22,6 +22,7 @@
 <script type="text/javascript"> 
 var error_login = false; 
 var error_register = false; 
+var error_reset = false;
 var logged = false; 
 </script>
 <?php
@@ -39,6 +40,12 @@ var logged = false;
 		echo '<script type="text/javascript">
 		error_login = true;
 		 error_register = true;
+		 </script>';
+	}
+	else if(isset($_SESSION['error_reset'])){
+		echo '<script type="text/javascript">
+		error_login = true;
+		error_reset = true;
 		 </script>';
 	}
 	else{
@@ -331,6 +338,12 @@ var logged = false;
 					<div id="forgot_password_box" class="row" style="margin-bottom:10px;">
 					  <h2 style="text-align:center; margin:auto; padding:15px 10px 10px 10px; min-width:250px;">Forgot password</h2>
 					   <p style="max-width: 280px; margin:0 auto;">When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+					   <?php
+						 if(isset($_SESSION['error_reset'])){
+							 echo $_SESSION['error_reset'];
+							 unset($_SESSION['error_reset']);;
+						 }	 
+						?>
 						<input class="login" type="email" name="forgot_email"  placeholder="Email" id="forgot_email" required/><br>				
 						<input type="submit" value="Reset password" class="submit login" />
 					</div>

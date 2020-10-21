@@ -71,11 +71,16 @@ window.onload = function() {
     else{
       change_login_button();
     }
+
     if(error_register){
       register();
     }
-    count_asrticles();
-  }
+    if(error_reset){
+      forget_password();
+    }
+  count_asrticles();
+}
+
   if(!error_login){
     span.onclick = function() { 
     modal.style.display = "none";  
