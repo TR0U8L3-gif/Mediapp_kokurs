@@ -172,7 +172,7 @@ var logged = false;
 						</div>
 						--->
 						
-						<div id="6" class="article">
+						<div id="5" class="article">
 							<fieldset>
 								<legend>
 									Cool ideas to beat the autumn blahs
@@ -194,7 +194,7 @@ var logged = false;
 								<button onclick="readmore(this)" id="read_btn6" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
-						<div id="5" class="article">
+						<div id="4" class="article">
 							<fieldset>
 								<legend>
 								Coronavirus - symptoms
@@ -224,7 +224,7 @@ var logged = false;
 								<button onclick="readmore(this)" id="read_btn5" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
-						<div id="4" class="article">
+						<div id="3" class="article">
 							<fieldset>
 								<legend>
 								Coronavirus - How Does It Spread? <br> Tips for when you need to leave the house
@@ -236,7 +236,7 @@ var logged = false;
 								<button onclick="readmore(this)" id="read_btn4" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
-						<div id="3" class="article">
+						<div id="2" class="article">
 							<fieldset>
 								<legend>
 									How to eat healthily? <br> Diet in times of plague 
@@ -249,19 +249,6 @@ var logged = false;
 									Add natural olive oil, healthy fats, eat nuts and delicacies. Try to choose organic meat, dairy and poultry.
 								</div><br>
 								<button onclick="readmore(this)" id="read_btn3" class="read_more">Read more</button>
-							</fieldset>			
-						</div>
-						<div id="2" class="article">
-							<fieldset>
-								<legend>
-								How to exercise at home? <br> Physical activity
-								</legend>
-								Everyone knows that exercise is health. When you stay at home for a long time, your muscles work much less and you may be tempted to spend time only in front of the TV.
-								<div id="more2" style="display: none;">Sports clubs, swimming pools and gyms are closed - but many of them organize online classes for their regulars. How to exercise at home ? 
-								There are many videos on the Internet showing how to exercise at home - yoga, pilates, and workouts that will sweat you out. All you need is a comfortable outfit and a bit of motivation.
-							     You can also make an appointment with friends for a joint training in front of the computer - then it is easier to maintain discipline so as not to end the quarantine time with weakened immunity and extra pounds.
-								</div><br>
-								<button onclick="readmore(this)" id="read_btn2" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
 						<div id="1" class="article">

@@ -98,27 +98,45 @@ var logged = false;
 			</div>
 			
 			<div id="Disease" class="test">
-			<h1>Add disease to the assistant's memory</h1>
-				<form action="add_disease.php" method="post"> 
-					<div class="disease">
-					<p>You can add a new disease to the database of our medical assistant. Remember that the form should be understandable to everyone and the maximum length of your speech: cannot exceed 280 characters</p>
-					<div id="disease_info">
-						<?php
-							if(isset($_SESSION['error_disease'])){
-								echo $_SESSION['error_disease'];
-								unset($_SESSION['error_disease']);;
-							}	 
-						?>
-					</div>
-					<textarea class="disease" id="disease_name" type="text" name="name" placeholder="Disease name" onkeyup="illnes_isset()" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea> <br>
-					<textarea class="disease" id="disease_description" type="text" name="description" placeholder="Disease description" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea>  <br>
-					<textarea class="disease" id="disease_symptoms" type="text" name="symptoms" placeholder="Disease symptoms" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea>  <br>
-					<textarea class="disease" id="disease_tips" type="text" name="tips" placeholder="Disease tips" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea> <br>
-					<input id="disease_btn" type="submit" value="Add new disease to assistant" class="submit login"/>
-					</div>
-				</form>
+				<h1>Add disease to the assistant's memory</h1>
+					<form action="add_disease.php" method="post"> 
+						<div class="disease">
+						<p>You can add a new disease to the database of our medical assistant. Remember that the form should be understandable to everyone and the maximum length of your speech: cannot exceed 280 characters</p>
+						<div id="disease_info">
+							<?php
+								if(isset($_SESSION['error_disease'])){
+									echo $_SESSION['error_disease'];
+									unset($_SESSION['error_disease']);;
+								}	 
+							?>
+						</div>
+						<textarea class="disease" id="disease_name" type="text" name="name" placeholder="Disease name" onkeyup="illnes_isset()" maxlength="280"  required></textarea> <br>
+						<textarea class="disease" id="disease_description" type="text" name="description" placeholder="Disease description" maxlength="280" required></textarea>  <br>
+						<textarea class="disease" id="disease_symptoms" type="text" name="symptoms" placeholder="Disease symptoms" maxlength="280"  required></textarea>  <br>
+						<textarea class="disease" id="disease_tips" type="text" name="tips" placeholder="Disease tips" maxlength="280"  required></textarea> <br>
+						<input id="disease_btn" type="submit" value="Add new disease to assistant" class="submit login"/>
+						</div>
+					</form>
 			</div>
 			<div id="Article" class="test">
+				<h1>Add new article to blog</h1>
+					<form action="add_article.php" method="post"> 
+						<div class="disease">
+						<p>You can add an article speech to your health upgrade blog. Remember that you are writing it in html! eg new line = &lt;br&gt; bold = &lt;b&gt; text &lt;/b&gt;; bullet points = &lt;ul&gt; &lt;li&gt; some text &lt;/li&gt; &lt;/ul&gt;</p>
+						<div id="article_info">
+							<?php
+								if(isset($_SESSION['error_article'])){
+									echo $_SESSION['error_article'];
+									unset($_SESSION['error_article']);;
+								}	 
+							?>
+						</div>
+						<textarea class="disease" id="title" type="text" name="title" placeholder="Article title"  required></textarea> <br>
+						<textarea class="disease" id="introduction" type="text" name="introduction" placeholder="Article introduction" required></textarea>  <br>
+						<textarea class="disease" id="expansion" type="text" name="expansion" placeholder="Article expansion"  required></textarea>  <br>
+						<input id="article_btn" type="submit" value="Add new article" class="submit login"/>
+						</div>
+					</form>
 			</div>
 			<div id="Admin" class="test">
 				<div class="admin">
