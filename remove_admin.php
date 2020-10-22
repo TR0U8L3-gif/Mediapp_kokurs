@@ -27,7 +27,7 @@ session_start();
                         $array = $result->fetch_assoc();
                         $isAdmin = $array['admin'];
                         if($isAdmin==0){
-                            $_SESSION['error_add_a']='<span style="color:red">You do not have permission!</span><br>';
+                            $_SESSION["error_remove_a"]='<span style="color:red">You do not have permission!</span><br>';
                             $connect->close();
                             header('Location: user.php');
                             exit();
@@ -42,20 +42,26 @@ session_start();
                                 $isAdmin = $array['admin'];
                                 $nicks = $result->num_rows;
                                 if($nicks==0){
-                                 $_SESSION['error_remove_a']='<span style="color:red">There is no account associated with this username!</span><br>';
+                                 $_SESSION["error_remove_a"]='<span style="color:red">There is no account associated with this username!</span><br>';
                                  $connect->close();
                                  header('Location: user.php');
                                  exit();
                                 }
                                 else if($isAdmin==0){
-                                    $_SESSION['error_remove_a']='<span style="color:red">This person no longer has an administratorr!</span><br>';
+                                    $_SESSION["error_remove_a"]='<span style="color:red">This person no longer has an administratorr!</span><br>';
+                                    $connect->close();
+                                    header('Location: user.php');
+                                    exit();
+                                }
+                                else if($login == $array['username']){
+                                    $_SESSION["error_remove_a"]='<span style="color:red">You cannot take away your own administrator rights!</span><br>';
                                     $connect->close();
                                     header('Location: user.php');
                                     exit();
                                 }
                                 else{
                                     if($connect->query("UPDATE users SET admin=0 WHERE username='$admin'")){
-                                        $_SESSION['error_remove_a']='<span style="color:#4CAF50">Administrator removed successfully!</span><br>';
+                                        $_SESSION["error_remove_a"]='<span style="color:#4CAF50">Administrator removed successfully!</span><br>';
                                         header('Location: user.php');   
                                     }
                                 }
