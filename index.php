@@ -171,7 +171,22 @@ var logged = false;
 							</fieldset>			
 						</div>
 						--->
-						
+						<?php
+							$file="txt/articles.txt";
+							$linecount = 0;
+							$text = array();
+							$handle = fopen($file, "r");
+							while(!feof($handle)){
+							$line = fgets($handle);
+							$text[$linecount]=$line;
+							$linecount++;
+							}
+							fclose($handle);
+
+							for ($x = $linecount-1; $x >= 0; $x--) {
+								echo $text[$x];
+							}
+						?>
 						<div id="5" class="article">
 							<fieldset>
 								<legend>
