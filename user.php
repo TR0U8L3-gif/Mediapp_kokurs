@@ -85,13 +85,25 @@ var logged = false;
 
 	    <div id="content">	
             <div id="User" class="test">
-            <?php
-            echo "<p>".$_SESSION['name']." ".$_SESSION['surname']."</p>";
-            echo "<p>e-mail: ".$_SESSION['email']."</p>";
-            if($_SESSION['admin']>0){
-            echo "<p>You are the administrator of this website</p>";
-            }
-            ?>
+				<div  class="user_info">
+				Name:    Surname:   <br>
+				Login:    E-mail:     Phone nr:    <br>
+				Biological sex:    Age:     Height:     Weight:   <br>
+					<div  class="bmi">
+				
+					</div>
+				</div>
+				<div class="illneses">
+					
+						<div class="allergies">
+							Allergies:<br>
+						</div>
+						<div class="diseases">
+							Chronic diseases:<br>
+						</div>
+					<div style="clear: both;"></div>
+				</div>
+				<button>Change user info</button>
 			</div>
 
 			<div id="Fell" class="test">
