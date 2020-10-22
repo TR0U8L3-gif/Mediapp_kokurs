@@ -68,6 +68,7 @@ var logged = false;
 		<nav id="mySidenav" class="sidenav">
 			
 			<a href="#User">User info</a>
+			<a href="#Bmi"> BMI </a>
 			<a href="#Fell">How you feel?</a>
 			<?php
 				if(isset($admin)&&$admin>0){
@@ -89,9 +90,6 @@ var logged = false;
 				Name:    Surname:   <br>
 				Login:    E-mail:     Phone nr:    <br>
 				Biological sex:    Age:     Height:     Weight:   <br>
-					<div  class="bmi">
-				
-					</div>
 				</div>
 				<div class="illneses">
 					
@@ -105,7 +103,8 @@ var logged = false;
 				</div>
 				<button>Change user info</button>
 			</div>
-
+			<div id="Bmi">
+			</div>
 			<div id="Fell" class="test">
 			</div>
 			<?php

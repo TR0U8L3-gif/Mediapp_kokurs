@@ -11,6 +11,7 @@
     border-width: 2px;
     border-color: #808080;
     padding: 15px;
+    font-size: 20px;
 }
 .illneses{
     height: auto;
@@ -26,6 +27,7 @@
     border-color: #808080;
     padding: 15px;
     color: white;
+    font-size: 20px;
 }
 .allergies{
     padding: 5px;
