@@ -1,4 +1,50 @@
-.admin h1 {
+.disease{
+height: auto;
+width: 100%;
+}
+textarea.disease{
+    height: auto;
+    width: 80%;
+    margin: 5px;
+    padding: 10px;
+    border-color: silver;
+    opacity: 0.70;
+    border-radius: 4px;
+    border-width: 2px;
+    font-size: 17px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    resize: none;
+    transition: 0.8s;
+}
+textarea.disease:hover{
+    border-color: silver;
+    opacity: 1;
+}
+button.add_disease{
+background-color: #4CAF50;  
+color: white;
+cursor: pointer;
+border: none;
+border-radius: 4px;
+min-width: 240px;
+width: 50%;
+padding: 12px;
+opacity: 0.70;
+margin: 5px 0;
+display: inline-block;
+font-size: 17px;
+text-decoration: none;
+}
+button:hover{
+opacity: 1;
+}
+#disease_name{
+    width: 65%;
+}
+
+   h1 {
     overflow: hidden;
     text-align: center;
     font-weight: normal;

@@ -42,7 +42,7 @@
                 
                 if($register_ok=="true"){
                     if($connect->query("INSERT INTO users VALUES(NULL,'$name_r','$surname_r','$email','$nick','$password_hash',0)") && $connect->query("INSERT INTO info(username) VALUES('$nick')")){
-                    $_SESSION['error_register']='<span style="color:#4CAF50">Registration completed successfully!</span><br>';
+                    $_SESSION['error_register']='<span style="color:#4CAF50;">Registration completed successfully!</span><br>';
                     header('Location: index.php');   
                     }
                 }

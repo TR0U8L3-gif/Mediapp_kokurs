@@ -92,18 +92,31 @@ var logged = false;
             echo "<p>You are the administrator of this website</p>";
             }
             ?>
-            </div>
+			</div>
+
+			<div id="Feel" class="test">
+			</div>
 			
 			<div id="Disease" class="test">
-			<h1>Add disease</h1>
-				<div class="disease">
-				<p>You can add a new disease to the database of our medical assistant. Remember that the form should be understandable to everyone and the maximum length of your speech cannot exceed 280 characters</p>
-				<input id="disease_name" type="text" name="name" placeholder="Disease name" maxlength="280" required /> <br>
-				<input id="disease_description" type="text" name="description" placeholder="Disease description" maxlength="280" required /> <br>
-				<input id="disease_symptoms" type="text" name="symptoms" placeholder="Disease symptoms" maxlength="280" required /> <br>
-				<input id="disease_tips" type="text" name="tips" placeholder="Disease tips" maxlength="280" required /> <br>
-				<button class="add_disease">Add new disease to assistant</button>
-				</div>
+			<h1>Add disease to the assistant's memory</h1>
+				<form action="add_disease.php" method="post"> 
+					<div class="disease">
+					<p>You can add a new disease to the database of our medical assistant. Remember that the form should be understandable to everyone and the maximum length of your speech: cannot exceed 280 characters</p>
+					<div id="disease_info">
+						<?php
+							if(isset($_SESSION['error_disease'])){
+								echo $_SESSION['error_disease'];
+								unset($_SESSION['error_disease']);;
+							}	 
+						?>
+					</div>
+					<textarea class="disease" id="disease_name" type="text" name="name" placeholder="Disease name" onkeyup="illnes_isset()" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea> <br>
+					<textarea class="disease" id="disease_description" type="text" name="description" placeholder="Disease description" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea>  <br>
+					<textarea class="disease" id="disease_symptoms" type="text" name="symptoms" placeholder="Disease symptoms" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea>  <br>
+					<textarea class="disease" id="disease_tips" type="text" name="tips" placeholder="Disease tips" maxlength="280" pattern="^[a-zA-Z0-9\.]*$" required></textarea> <br>
+					<input id="disease_btn" type="submit" value="Add new disease to assistant" class="submit login"/>
+					</div>
+				</form>
 			</div>
 			<div id="Article" class="test">
 			</div>
@@ -136,7 +149,7 @@ var logged = false;
 										unset($_SESSION['error_remove_a']);;
 									}	 
 									?>
-								<input class="login" type="text" name="newAdmin" placeholder="New admin" required /> <br>
+								<input class="login" type="text" name="newAdmin" placeholder="Ex-admin" required /> <br>
 								<input class="login" type="password" name="password" placeholder="Your password" autocomplete="on" required /> <br>		
 								<input type="submit" value="Remove admin" class="submit login"/>
 							</div>
@@ -165,5 +178,11 @@ var logged = false;
 	
 	</div>
 	<script src="js/code.js"></script>
+	<script src="js/assistant.js"></script>
+	<?php
+	if(isset($admin)&&$admin>0){
+	echo '<script src="js/admin.js"></script>';
+	}
+	?>
 </body>
 </html>
