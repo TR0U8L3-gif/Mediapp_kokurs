@@ -245,7 +245,7 @@ opacity: 1;
   }
   
   .select-selected {
-    background-color:  #81c082;
+    background-color:  #4CAF50;
   }
   
   .select-selected:after {
@@ -275,7 +275,7 @@ opacity: 1;
 
   .select-items {
     position: absolute;
-    background-color:  #81c082;
+    background-color:  #4CAF50;
     top: 100%;
     left: 0;
     right: 0;

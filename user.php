@@ -392,7 +392,15 @@ var logged = false;
 				
 			</div>
 			<div id="Feel" class="test">
-				<form action="add_feel.php" method="post"> 
+					<?php
+						if(isset($_SESSION["feel_select"])){
+							echo $_SESSION["feel_select"];
+							unset($_SESSION["feel_select"]);
+						}
+					?>
+				<P style="font-size:18px;">On a scale of 1 to 9, choose how you feel and say why you chose this option</P>
+				<br>
+				<form action="add_feel.php" method="post"> 	
 					<div class="custom-select" id="feel" style="width:400px;">
 					<select  name="feel_select" id="feel_select" required>
 								<option  value="0">Select:</option>
@@ -515,6 +523,7 @@ var logged = false;
 	<script src="js/code.js"></script>
 	<script src="js/user.js"></script>
 	<script src="js/assistant.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 
 	<?php
 	if(isset($admin)&&$admin>0){
