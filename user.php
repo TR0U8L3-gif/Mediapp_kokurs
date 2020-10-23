@@ -120,8 +120,8 @@ var logged = false;
 					<?php
 				echo '
 				<br>Name: '.$name.'<br>   Surname: '.$surname.'<br><br>
-				Login: '.$username.'<br>  E-mail: '.$email.'<br>    Phone nr:'.$phone.'<br><br>
-				Biological sex: '.$sex.'<br> Age: '.$age.'<br>    Height: '.$height.'<br>  Weight: '.$weight.'kg<br><br>';
+				Login: '.$username.'<br>  E-mail: '.$email.'<br>    Phone nr: '.$phone.'<br><br>
+				Biological sex: '.$sex.'<br> Age: '.$age.'<br>    Height: '.$height.' m<br>  Weight: '.$weight.' kg<br><br>';
 				?>
 				</div>
 				<div class="illneses">
@@ -186,7 +186,210 @@ var logged = false;
 						<input id="user_btn" type="submit" value="Upload your user informactions" class="submit login"/>
 				</form>
 			</div>
-			<div id="Bmi">
+			
+			<div id="Bmi"class="test">
+				<?php
+				if($sex !="" && $age >0 && $height>0 && $weight>0){
+				$bmi = round($weight/($height*$height),5);
+				// lg g o r
+				if($age<=5){
+					if($bmi>20){
+						$p = "r";
+					}
+					else if($bmi>17){
+						$p = "o";
+					}
+					else if($bmi>14){
+						$p = "g";
+					}
+					else{
+						$p = "lg";
+					}
+				}
+				else if($age<=9){
+					if($bmi>21){
+						$p = "r";
+					}
+					else if($bmi>18){
+						$p = "o";
+					}
+					else if($bmi>15){
+						$p = "g";
+					}
+					else{
+						$p = "lg";
+					}
+				}
+				else if($age<=11){
+					if($bmi>23){
+						$p = "r";
+					}
+					else if($bmi>20){
+						$p = "o";
+					}
+					else if($bmi>17){
+						$p = "g";
+					}
+					else{
+						$p = "lg";
+					}
+				}	
+				else if($age<=13){
+					if($bmi>25){
+						$p = "r";
+					}
+					else if($bmi>21){
+						$p = "o";
+					}
+					else if($bmi>17){
+						$p = "g";
+					}
+					else{
+						$p = "lg";
+					}
+				}
+				else if($age<=15){
+					if($sex="male"){
+						if($bmi>27){
+							$p = "r";
+						}
+						else if($bmi>23){
+							$p = "o";
+						}
+						else if($bmi>19){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}
+					else{
+						if($bmi>26){
+							$p = "r";
+						}
+						else if($bmi>22){
+							$p = "o";
+						}
+						else if($bmi>18){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}
+				}
+				else if($age<=17){
+					if($sex="male"){
+						if($bmi>28){
+							$p = "r";
+						}
+						else if($bmi>24){
+							$p = "o";
+						}
+						else if($bmi>20){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}
+					else{
+						if($bmi>27){
+							$p = "r";
+						}
+						else if($bmi>22){
+							$p = "o";
+						}
+						else if($bmi>18){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}
+				}
+				else{
+					if($sex="male"){
+						if($bmi>29){
+							$p = "r";
+						}
+						else if($bmi>24.5){
+							$p = "o";
+						}
+						else if($bmi>20.5){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}
+					else{
+						if($bmi>27){
+							$p = "r";
+						}
+						else if($bmi>23){
+							$p = "o";
+						}
+						else if($bmi>19){
+							$p = "g";
+						}
+						else{
+							$p = "lg";
+						}
+					}	
+				}
+				
+				
+				echo'<div id="bmi"class="bmi '.$p.'">';	
+					echo 'BMI: '. $bmi;
+				echo'</div><br>
+				<div id="bmi_des"class="bmi_des">';
+				if($p=="r"){
+					echo'<br>Obese<br><br>
+					If you feel good in your body, we will not force you to do anything but check the benefits of sports and a healthy lifestyle:<br>
+					1. Contribute to weight loss.<br>
+					2. Accelerating the weight loss process.<br>
+					3. Reducing the risk of the yo-yo effect.<br>
+					4. Giving the figure lightness and energetic expression.<br>
+					5. Improve your mood.<br>
+					6. Increasing the basal metabolism.<br>
+					7. Improvement of the blood lipid profile.<br>
+					8. Improvement of tissue sensitivity to insulin.<br>
+					9. To regulate (lower) blood pressure.<br>
+					10. Increasing the body&apos;s efficiency.<br><br><br>';
+				}
+				else if($p=="o"){
+					echo'<br>Overweight<br><br>
+					It&apos;s not bad you are close to your perfect bmi but you don&apos;t have to do anything with your body, you look good!<br> 
+					But a little more exercise, maybe some diet would make you look perfect.<br>
+					Think about it and remember a healthy mind in a healthy body<br><br><br>';
+				}
+				else if($p=="g"){
+					echo'<br><h2>Healthy Weight</h2><br>
+					As the name suggests you are a specimen of health. Your body looks perfect, others can only envy you.<br>
+					But remember not to rest on your laurels.<br>
+					You have to maintain a health level so that others can follow your example ;)<br><br><br>';
+				}
+				else if($p=="lg"){
+					echo'<br>Underweight<br><br>
+					If you feel good in your body, we will not force you to do anything but
+					here are some healthy ways to gain weight when you&apos;re underweight:<br>
+					1.Eat more frequently. When you&apos;re underweight, you may feel full faster.<br>
+					2.Choose nutrient-rich foods.<br>
+					3.Try smoothies and shakes.<br>
+					4.Watch when you drink.<br>
+					5.Make every bite count.<br>
+					6.Top it off.<br>
+					7.Have an occasional treat.<br>
+					8.Exercise.<br><br><br>';
+				}
+				echo'</div>';
+				}
+				else{
+					echo'<div id="bmi_des"class="bmi_des">Set your biological sex, age, height and weight to get your bmi informactions!</div>';
+				}
+				?>
+				
 			</div>
 			<div id="Fell" class="test">
 			</div>

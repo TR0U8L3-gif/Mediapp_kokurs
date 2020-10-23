@@ -2,7 +2,50 @@ br {
     display: block;
     margin: 10px 0;
 }
+h2{
+    margin:0;
+}
+.bmi{
+min-height: 70px;
+width: 420px;
+color: white; 
+background-color: gray;
+margin: auto;
+border:solid;
+border-radius: 20px;
+border-width: 4px;
+border-color: silver;
+font-size: 60px;
+padding: 10px;
+}
+.bmi.r{
+    background-color: red;
+}
+.bmi.o{
+    background-color: orange;
+}
+.bmi.g{
+    background-color: green;
+}
+.bmi.lg{
+    background-color: lightgreen;
+}
 
+.bmi_des{
+    height: auto;
+    width: 95%;
+    color: white; 
+    background-color: gray;
+    margin: auto;
+    border:solid;
+    border-radius: 5px;
+    border-width: 4px;
+    border-color: silver;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.6;
+    }
 #Change_user_info{
     display:none;
 }
