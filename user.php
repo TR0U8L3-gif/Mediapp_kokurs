@@ -12,6 +12,36 @@
         $email = $_SESSION['email'];
         $username = $_SESSION['username'];
 		$admin = $_SESSION['admin'];
+
+		require_once "connect.php";
+        mysqli_report(MYSQLI_REPORT_STRICT);
+
+        try{
+            $connect = new mysqli($host,$db_user,$db_password,$db_name);
+            if($connect->connect_errno!=0){
+                throw new Exception(mysqli_connect_errno());
+            }
+            else{
+				$result = $connect->query("SELECT * FROM info WHERE username='$username'");
+                if(!$result) throw new Exception($connect->error);
+                else{
+					$array = $result->fetch_assoc();
+					
+					$phone = $array['phone_nr'];
+					$sex = $array['sex'];
+					$age = $array['age'];
+					$height = $array['height'];
+					$weight = $array['weight'];
+					$allergies = $array['allergies'];
+					$diseases = $array['diseases'];
+				}
+				$connect->close();
+            }
+		}
+		catch(Exception $e){
+            echo 'We apologize for the temporary inconvenience and please register again later';
+            echo '<br> Error: '.$e;
+        }
 	}
 ?>
 
@@ -87,9 +117,12 @@ var logged = false;
 	    <div id="content">	
             <div id="User" class="test">
 				<div  class="user_info">
-				Name:    Surname:   <br>
-				Login:    E-mail:     Phone nr:    <br>
-				Biological sex:    Age:     Height:     Weight:   <br>
+					<?php
+				echo '
+				<br>Name: '.$name.'<br>   Surname: '.$surname.'<br><br>
+				Login: '.$username.'<br>  E-mail: '.$email.'<br>    Phone nr:'.$phone.'<br><br>
+				Biological sex: '.$sex.'<br> Age:'.$age.'<br>    Height: '.$height.'<br>  Weight: '.$weight.'kg<br><br>';
+				?>
 				</div>
 				<div class="illneses">
 					
@@ -101,7 +134,41 @@ var logged = false;
 						</div>
 					<div style="clear: both;"></div>
 				</div>
-				<button>Change user info</button>
+				<button onclick="change_user_info()">Change user info</button>
+			</div>
+			<div id="Change_user_info" class="test">
+				<form  action="change_user_info.php" method="post"> 
+						<div  class="user_info">
+							<?php
+								if(isset($_SESSION["error_change"])){
+									echo $_SESSION["error_change"];
+									unset($_SESSION["error_change"]);
+								}
+							?>
+						<br>Phone nr:<br><textarea class="user" id="phone" type="text" name="phone" placeholder="Phone number" onkeypress="checkForSpaces(this)"  required></textarea><br>
+						Biological sex:<br>
+						<select name="sex" id="sex">
+							<option  value="male">&emsp;Male</option>
+							<option  value="female">&emsp;Female</option>
+						</select><br>    
+						Age:<br><textarea class="user" id="age" type="text" name="age" placeholder="Your age" onkeypress="checkForSpaces(this)" required></textarea><br>
+						Height:<br><textarea class="user b" id="height" type="text" name="height" placeholder="Your height in meters [m]" onkeypress="checkForSpaces(this)"  required></textarea><br>
+						Weight:<br><textarea class="user b" id="weight" type="text" name="weight" placeholder="Your weight in kilograms [kg]" onkeypress="checkForSpaces(this)"  required></textarea><br>
+						</div>
+						<div class="illneses">
+							
+								<div class="allergies">
+									Allergies:<br>
+									<textarea class="user o b" id="allergies" type="text" name="allergies" placeholder="Your allergies" ></textarea>
+								</div>
+								<div class="diseases">
+									Diseases:<br>
+									<textarea class="user o b" id="diseases" type="text" name="diseases" placeholder="Your chronic diseases" ></textarea>
+								</div>
+							<div style="clear: both;"></div>
+						</div>
+						<input id="user_btn" type="submit" value="Upload your user informactions" class="submit login"/>
+				</form>
 			</div>
 			<div id="Bmi">
 			</div>
@@ -207,6 +274,7 @@ var logged = false;
 	
 	</div>
 	<script src="js/code.js"></script>
+	<script src="js/user.js"></script>
 	<script src="js/assistant.js"></script>
 
 	<?php

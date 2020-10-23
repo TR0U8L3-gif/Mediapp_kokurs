@@ -32,7 +32,7 @@ function checkForSpaces(toCheck) {
     document.getElementById(id).setCustomValidity("It seems you have a space.");
   }
   else if(!value.match(filter)) {
-    document.getElementById(id).setCustomValidity("Only Allow letters and numbers!");
+    document.getElementById(id).setCustomValidity("Only allow letters and numbers!");
   } 
   else{
     document.getElementById(id).setCustomValidity('');

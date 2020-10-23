@@ -9,6 +9,15 @@
 
         textarea4 = document.querySelector("#disease_tips");
         textarea4.addEventListener('input', autoResize, false);
+
+        textarea5 = document.querySelector("#title");
+        textarea5.addEventListener('input', autoResize, false);
+
+        textarea6 = document.querySelector("#introduction");
+        textarea6.addEventListener('input', autoResize, false);
+
+        textarea7 = document.querySelector("#expansion");
+        textarea7.addEventListener('input', autoResize, false);
      
         var upload = false;
         btn = document.querySelector("#disease_btn");
@@ -24,6 +33,9 @@
             textarea2.value="";
             textarea3.value="";
             textarea4.value="";
+            textarea5.value="";
+            textarea6.value="";
+            textarea7.value="";
         };
             
         constrainInput = (event) => { 
