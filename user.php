@@ -392,6 +392,9 @@ var logged = false;
 				
 			</div>
 			<div id="Feel" class="test">
+				<canvas id="lineChart">
+					
+				</canvas>
 					<?php
 						if(isset($_SESSION["feel_select"])){
 							echo $_SESSION["feel_select"];
@@ -520,10 +523,11 @@ var logged = false;
 		</div>
 	
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script src="js/code.js"></script>
 	<script src="js/user.js"></script>
 	<script src="js/assistant.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+	
 
 	<?php
 	if(isset($admin)&&$admin>0){

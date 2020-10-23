@@ -1,3 +1,6 @@
+canvas{
+    max-height: 600px;
+}
 br {
     display: block;
     margin: 10px 0;
