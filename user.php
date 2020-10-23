@@ -121,7 +121,7 @@ var logged = false;
 				echo '
 				<br>Name: '.$name.'<br>   Surname: '.$surname.'<br><br>
 				Login: '.$username.'<br>  E-mail: '.$email.'<br>    Phone nr:'.$phone.'<br><br>
-				Biological sex: '.$sex.'<br> Age:'.$age.'<br>    Height: '.$height.'<br>  Weight: '.$weight.'kg<br><br>';
+				Biological sex: '.$sex.'<br> Age: '.$age.'<br>    Height: '.$height.'<br>  Weight: '.$weight.'kg<br><br>';
 				?>
 				</div>
 				<div class="illneses">
