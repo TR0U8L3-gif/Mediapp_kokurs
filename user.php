@@ -404,7 +404,7 @@ var logged = false;
 				<P style="font-size:18px;">On a scale of 1 to 9, choose how you feel and say why you chose this option</P>
 				<br>
 				<form action="add_feel.php" method="post"> 	
-					<div class="custom-select" id="feel" style="width:400px;">
+					<div class="custom-select" id="feel" style="width:200px;">
 					<select  name="feel_select" id="feel_select" required>
 								<option  value="0">Select:</option>
 								<option  value="1">1</option>

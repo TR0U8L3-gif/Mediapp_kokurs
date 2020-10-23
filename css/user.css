@@ -1,6 +1,9 @@
 canvas{
     max-height: 600px;
 }
+#Feel{
+    margin-bottom: 120px;
+}
 br {
     display: block;
     margin: 10px 0;
