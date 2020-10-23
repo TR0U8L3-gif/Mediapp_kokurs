@@ -36,11 +36,14 @@ window.onload = function() {
 
 function change_user_info(){
     x = document.querySelector("#Change_user_info"); 
+    btn = document.querySelector("#change_button"); 
     if(x.style.display == "block"){
         x.style.display = "none";
+        btn.textContent  = "Change user info";
     }
     else{
         x.style.display = "block";
+        btn.textContent  = "Do not change user info";
     }
 }
 function checkForSpaces(toCheck) {

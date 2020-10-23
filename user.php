@@ -127,14 +127,30 @@ var logged = false;
 				<div class="illneses">
 					
 						<div class="allergies">
-							Allergies:<br>
+							Allergies:<br><br>
+							<?php
+							if($allergies!==""){
+								echo $allergies;	
+							}
+							else{
+								echo 'You are not allergic';
+							}
+							?>
 						</div>
 						<div class="diseases">
-							Chronic diseases:<br>
+							Chronic diseases:<br><br>
+							<?php
+							if($diseases!==""){
+								echo $diseases;	
+							}
+							else{
+								echo 'You have no health problems';
+							}
+							?>
 						</div>
 					<div style="clear: both;"></div>
 				</div>
-				<button onclick="change_user_info()">Change user info</button>
+				<button id="change_button" onclick="change_user_info()">Change user info</button>
 			</div>
 			<div id="Change_user_info" class="test">
 				<form  action="change_user_info.php" method="post"> 
