@@ -99,7 +99,7 @@ var logged = false;
 			
 			<a href="#User">User info</a>
 			<a href="#Bmi"> BMI </a>
-			<a href="#Fell">How you feel?</a>
+			<a href="#Feel">How you feel?</a>
 			<?php
 				if(isset($admin)&&$admin>0){
 					echo 
@@ -391,8 +391,27 @@ var logged = false;
 				?>
 				
 			</div>
-			<div id="Fell" class="test">
-				
+			<div id="Feel" class="test">
+				<form action="add_feel.php" method="post"> 
+					<div class="custom-select" id="feel" style="width:400px;">
+					<select  name="feel_select" id="feel_select" required>
+								<option  value="0">Select:</option>
+								<option  value="1">1</option>
+								<option  value="2">2</option>
+								<option  value="3">3</option>
+								<option  value="4">4</option>
+								<option  value="5">5</option>
+								<option  value="6">6</option>
+								<option  value="7">7</option>
+								<option  value="8">8</option>
+								<option  value="9">9</option>
+							</select>
+					</div>
+					<div id="feel_comment">
+						<textarea class="user feel_text" id="feel_comment_text" type="text" name="feel_comment_text" placeholder="Justify the chosen option or describe how you feel" required></textarea>
+					</div>	
+					<input type="submit" value="Tell us how you feel!" class="submit login feel_text"/>
+				</form>
 			</div>
 			<?php
 				if(isset($admin)&&$admin>0){
