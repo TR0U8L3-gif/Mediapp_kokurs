@@ -345,7 +345,7 @@ var logged = false;
 				echo'</div><br>
 				<div id="bmi_des"class="bmi_des">';
 				if($p=="r"){
-					echo'<br>Obese<br><br>
+					echo'<br><h2>Obese</h2><br>
 					If you feel good in your body, we will not force you to do anything but check the benefits of sports and a healthy lifestyle:<br>
 					1. Contribute to weight loss.<br>
 					2. Accelerating the weight loss process.<br>
@@ -359,7 +359,7 @@ var logged = false;
 					10. Increasing the body&apos;s efficiency.<br><br><br>';
 				}
 				else if($p=="o"){
-					echo'<br>Overweight<br><br>
+					echo'<br><h2>Overweight</h2><br>
 					It&apos;s not bad you are close to your perfect bmi but you don&apos;t have to do anything with your body, you look good!<br> 
 					But a little more exercise, maybe some diet would make you look perfect.<br>
 					Think about it and remember a healthy mind in a healthy body<br><br><br>';
@@ -371,7 +371,7 @@ var logged = false;
 					You have to maintain a health level so that others can follow your example ;)<br><br><br>';
 				}
 				else if($p=="lg"){
-					echo'<br>Underweight<br><br>
+					echo'<br><h2>Underweight</h2><br>
 					If you feel good in your body, we will not force you to do anything but
 					here are some healthy ways to gain weight when you&apos;re underweight:<br>
 					1.Eat more frequently. When you&apos;re underweight, you may feel full faster.<br>
@@ -386,7 +386,7 @@ var logged = false;
 				echo'</div>';
 				}
 				else{
-					echo'<div id="bmi_des"class="bmi_des">Set your biological sex, age, height and weight to get your bmi informactions!</div>';
+					echo'<div id="bmi_des"class="bmi_des"><br>Set your:<br> biological sex,<br> age,<br> height,<br> weight, <br> to get your bmi informactions!<br> <br></div>';
 				}
 				?>
 				
