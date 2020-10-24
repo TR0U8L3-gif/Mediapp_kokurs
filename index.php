@@ -193,7 +193,7 @@ var logged = false;
 									Cool ideas to beat the autumn blahs
 								</legend>
 								The autumn is in their full swing. Days are getting shorter and nights colder – getting even the best of us “down” with the autumn blues. Lack of energy and lack of motivation combined with mild depression are some of the characteristics of the autumn blahs. The season can be challenging for office managers as well who not only have to deal with their employee’s recurrent sick days due to colds and flu’s but a decrease in the staff morale and productivity too. It has also been estimated that around 3 – 6 % of employees suffer from SAD (Seasonal Affective Disorder) which is triggered in the darker autumn months.
-								<div id="more6" style="display: none;">
+								<div id="more5" style="display: none;">
 									So what can one do? How can employees fight back the autumn “blahs”? Unfortunately, we can’t just dedicate a few months to constant sleep. We have to get our tasks completed in the autumn months as well. Here, I have rounded up a few tips that will help you embrace the cold months and increase productivity during autumn blahs more effectively – even if you feel like hibernating.
 									<br><b>Here are our tips:</b>
 									<ul>
@@ -206,7 +206,7 @@ var logged = false;
 										<li>Manifest for an even better day</li>
 									</ul>
 								</div><br>
-								<button onclick="readmore(this)" id="read_btn6" class="read_more">Read more</button>
+								<button onclick="readmore(this)" id="read_btn5" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
 						<div id="4" class="article">
@@ -215,7 +215,7 @@ var logged = false;
 								Coronavirus - symptoms
 								</legend>
 								The course of COVID-19 ranges from asymptomatic or oligosymptomatic forms to severe conditions (e.g. parenchymal pneumonia), causing respiratory failure requiring mechanical ventilation and support in the intensive care unit, turning in extreme cases into critical conditions with multi-organ and systemic symptoms such as:
-								<div id="more5" style="display: none;">
+								<div id="more4" style="display: none;">
 								<ul>
 									<li>sepsis</li>
 									<li>septic shock</li>
@@ -236,7 +236,7 @@ var logged = false;
 								Form COVID-19 with moderate runs of respiratory symptoms typical of pneumonia: cough and short of breath (accelerated in children), without symptoms of severe pneumonia.<br><br>
 								Severe COVID-19 presents as severe pneumonia with high fever (not in all cases!), Shortness of breath, respiratory failure (> 30 breaths / min) and hypoxia, and in children with cyanosis.
 								</div><br>
-								<button onclick="readmore(this)" id="read_btn5" class="read_more">Read more</button>
+								<button onclick="readmore(this)" id="read_btn4" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
 						<div id="3" class="article">
@@ -245,10 +245,10 @@ var logged = false;
 								Coronavirus - How Does It Spread? <br> Tips for when you need to leave the house
 								</legend>
 								Threatens us coronavirus - as it moves ? Infection occurs via droplets. When you cannot work remotely, remember a few rules - use your own car or bicycle, keep distance from people you pass by, do not stay on the route for too long in one place.
-								<div id="more4" style="display: none;"><br><br>In public places, wear a face mask, wash your hands immediately after entering the house, using disinfectants and soap, have handkerchiefs in your pocket. Disinfect packets of ready-made food (cheese, milk, sausages, etc.) that you bring home before putting them in the refrigerator. Change and wash your clothes more often, take your own meals to work in sealed packages. Don't shake hands - say hello with a nod of the head, and when you touch the door handle or buttons on the elevator, use disposable gloves or a tissue and throw it in the bin. Frequently disinfect devices that you use every day - phone, laptop, wash the backpack in high temperature, clean the bag. Do not rub your hands on the face and around the eyes, forget about the habit of licking your finger when opening plastic bags.<br><br>
+								<div id="more3" style="display: none;"><br><br>In public places, wear a face mask, wash your hands immediately after entering the house, using disinfectants and soap, have handkerchiefs in your pocket. Disinfect packets of ready-made food (cheese, milk, sausages, etc.) that you bring home before putting them in the refrigerator. Change and wash your clothes more often, take your own meals to work in sealed packages. Don't shake hands - say hello with a nod of the head, and when you touch the door handle or buttons on the elevator, use disposable gloves or a tissue and throw it in the bin. Frequently disinfect devices that you use every day - phone, laptop, wash the backpack in high temperature, clean the bag. Do not rub your hands on the face and around the eyes, forget about the habit of licking your finger when opening plastic bags.<br><br>
 								During the quarantine period, take care of yourself in all possible ways - eat healthy and varied, wash your hands, air the apartment often. Drink plenty of water, get enough sleep and rest, and stay active. Do not overheat, work on healthy habits - when the pandemic time is over, you will be able to return to your duties normally and in full health.
 								</div><br>
-								<button onclick="readmore(this)" id="read_btn4" class="read_more">Read more</button>
+								<button onclick="readmore(this)" id="read_btn3" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
 						<div id="2" class="article">
@@ -258,12 +258,12 @@ var logged = false;
 								</legend>
 								A properly composed and nutrient-rich diet is the key to our health and a chance to avoid viral and bacterial infections. Quarantine does not help you prepare meals using natural and fresh ingredients. The only solution is to use the offers of local suppliers who are able to deliver the necessary purchases to your door, 
 								without going to the store and paying in cash - you protect yourself and the sellers, and at the same time support the business that is struggling to survive during this period.
-								<div id="more3" style="display: none;">According to WHO recommendations, during an epidemic, mainly hot meals should be eaten. Subjecting the ingredients to heat treatment kills any viruses that may have settled on the products. Soups, stews, casseroles and oven dishes are recommended. During this time, it is necessary to exclude raw meat, fish and eggs from the diet, and raw vegetables should be replaced with boiled ones. 
+								<div id="more2" style="display: none;">According to WHO recommendations, during an epidemic, mainly hot meals should be eaten. Subjecting the ingredients to heat treatment kills any viruses that may have settled on the products. Soups, stews, casseroles and oven dishes are recommended. During this time, it is necessary to exclude raw meat, fish and eggs from the diet, and raw vegetables should be replaced with boiled ones. 
 									Warm food additionally warms up our body from the inside and prevents it from cooling down. Alcohol consumption should be limited, as it disrupts the mucosal barrier function and paves the way for potential viruses, as well as lowers immunity.<br><br>
 									Remember to maintain the proper bacterial flora. Silage will help in this - cucumbers and cabbage, which provide the body with natural probiotics. The diet should include foods rich in B vitamins - whole grain sourdough bread, wholemeal pasta, legumes, vegetables and fruits, containing vitamins C, A and D. 
 									Add natural olive oil, healthy fats, eat nuts and delicacies. Try to choose organic meat, dairy and poultry.
 								</div><br>
-								<button onclick="readmore(this)" id="read_btn3" class="read_more">Read more</button>
+								<button onclick="readmore(this)" id="read_btn2" class="read_more">Read more</button>
 							</fieldset>			
 						</div>
 						<div id="1" class="article">
