@@ -63,7 +63,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/jquery-3.5.1.min.js"></script>
-
 <script type="text/javascript"> 
 var error_login = false; 
 var logged = false; 
@@ -72,6 +71,7 @@ var logged = false;
 	if(isset($_SESSION['logged'])&&$_SESSION['logged']=="true"){
 		echo '<script type="text/javascript">
 		logged = true;
+		var login="'.$username.'";
 		</script>';	
 	}
 ?>
@@ -116,11 +116,12 @@ var logged = false;
 
 	    <div id="content">	
             <div id="User" class="test">
+			<h1>User informactions</h1>
 				<div  class="user_info">
 					<?php
 				echo '
 				<br>Name: '.$name.'<br>   Surname: '.$surname.'<br><br>
-				Login: '.$username.'<br>  E-mail: '.$email.'<br>    Phone nr: '.$phone.'<br><br>
+				Login:'.$username.'<br>  E-mail: '.$email.'<br>    Phone nr: '.$phone.'<br><br>
 				Biological sex: '.$sex.'<br> Age: '.$age.'<br>    Height: '.$height.' m<br>  Weight: '.$weight.' kg<br><br>';
 				?>
 				</div>
@@ -188,6 +189,7 @@ var logged = false;
 			</div>
 			
 			<div id="Bmi"class="test">
+			<h1>Your BMI informactions</h1>
 				<?php
 				if($sex !="" && $age >0 && $height>0 && $weight>0){
 				$bmi = round($weight/($height*$height),5);
@@ -392,37 +394,38 @@ var logged = false;
 				
 			</div>
 			<div id="Feel" class="test">
-				<canvas id="lineChart">
-					
-				</canvas>
+			<h1>How you feel?</h1>
+				<canvas id="lineChart">	</canvas>
+				<div class="how_you_feel">
 					<?php
 						if(isset($_SESSION["feel_select"])){
 							echo $_SESSION["feel_select"];
 							unset($_SESSION["feel_select"]);
 						}
 					?>
-				<P style="font-size:18px;">On a scale of 1 to 9, choose how you feel and say why you chose this option</P>
-				<br>
-				<form action="add_feel.php" method="post"> 	
-					<div class="custom-select" id="feel" style="width:200px;">
-					<select  name="feel_select" id="feel_select" required>
-								<option  value="0">Select:</option>
-								<option  value="1">1</option>
-								<option  value="2">2</option>
-								<option  value="3">3</option>
-								<option  value="4">4</option>
-								<option  value="5">5</option>
-								<option  value="6">6</option>
-								<option  value="7">7</option>
-								<option  value="8">8</option>
-								<option  value="9">9</option>
-							</select>
-					</div>
-					<div id="feel_comment">
-						<textarea class="user feel_text" id="feel_comment_text" type="text" name="feel_comment_text" placeholder="Justify the chosen option or describe how you feel" required></textarea>
-					</div>	
-					<input type="submit" value="Tell us how you feel!" class="submit login feel_text"/>
-				</form>
+					<P style="font-size:18px;">On a scale of 1 to 9, choose how you feel and say why you chose this option</P>
+					<br>
+					<form action="add_feel.php" method="post"> 	
+							<div class="custom-select" id="feel" style="width:200px;">
+								<select  name="feel_select" id="feel_select" required>
+									<option  value="0">Select:</option>
+									<option  value="1">1</option>
+									<option  value="2">2</option>
+									<option  value="3">3</option>
+									<option  value="4">4</option>
+									<option  value="5">5</option>
+									<option  value="6">6</option>
+									<option  value="7">7</option>
+									<option  value="8">8</option>
+									<option  value="9">9</option>
+								</select>
+							</div>
+						<div id="feel_comment">
+							<textarea class="user feel_text" id="feel_comment_text" type="text" name="feel_comment_text" placeholder="Justify the chosen option or describe how you feel" required></textarea>
+						</div>	
+						<input type="submit" value="Tell us how you feel!" class="submit login feel_text"/>
+					</form>
+				</div>
 			</div>
 			<?php
 				if(isset($admin)&&$admin>0){
@@ -523,6 +526,7 @@ var logged = false;
 		</div>
 	
 	</div>
+	<script src="js/how_you_feel.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script src="js/code.js"></script>
 	<script src="js/user.js"></script>

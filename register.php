@@ -43,6 +43,7 @@
                 if($register_ok=="true"){
                     $link = 'txt/'.$nick.'.txt';
                     $file = fopen( $link, 'a+');
+                    fwrite($file,"How you feel data");
                     fclose($file);
                     if($connect->query("INSERT INTO users VALUES(NULL,'$name_r','$surname_r','$email','$nick','$password_hash',0)") && $connect->query("INSERT INTO info(username) VALUES('$nick')")){
                     $_SESSION['error_register']='<span style="color:#4CAF50;">Registration completed successfully!</span><br>';

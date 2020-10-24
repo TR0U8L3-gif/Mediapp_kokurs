@@ -1,8 +1,7 @@
 canvas{
-    max-height: 600px;
-}
-#Feel{
-    margin-bottom: 120px;
+    margin: auto;
+    max-height: 700px;
+    max-width: 1400px;
 }
 br {
     display: block;
@@ -115,6 +114,18 @@ input.feel_text{
     max-width: 300px;
 }
 
+.how_you_feel{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: #f2f2f2;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #808080;
+    padding: 15px;  
+}
 
 .user_info{
     height: auto;
@@ -243,7 +254,7 @@ opacity: 1;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 10;
   }
   
   .custom-select select {
@@ -285,7 +296,7 @@ opacity: 1;
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 10;
   }
   
   .select-hide {
@@ -294,4 +305,8 @@ opacity: 1;
   
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  #footer{
+      padding-top: 60px;
+      padding-bottom: 60px;
   }

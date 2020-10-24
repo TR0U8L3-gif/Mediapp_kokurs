@@ -5,7 +5,7 @@
         $feel = $_POST['feel_select'];
         $comment=  $_POST['feel_comment_text'];
         $nick= $_SESSION['username'];
-        $date = date("Y.m.d");
+        $date = date("M d");
         //echo $nick." ".$feel." ".$comment ;
         if($feel == 0){
             $_SESSION["feel_select"]='<span style="color:red">Select how you feel!</span>';
@@ -16,8 +16,8 @@
             $link = 'txt/'.$nick.'.txt';
             if($file = fopen($link, 'a+')){
 
-                $text = $date."/".$feel."/".$comment;
-                fwrite($file, "\r\n".$text);
+                $text = "\r\n".$date."\r\n".$feel."\r\n".$comment;
+                fwrite($file, $text);
                 fclose($file);
                 $_SESSION["feel_select"]='<span style="color:#4CAF50;">Informactions added successfully!</span><br>';
                 header('Location: user.php');
