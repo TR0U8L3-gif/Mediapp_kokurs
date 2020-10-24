@@ -81,7 +81,7 @@ session_start();
                         exit();
                         }
                         else{
-                        $username = $result    
+                        $username = $result;  
                         }
                     }
 

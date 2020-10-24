@@ -1,2 +1,2 @@
-# konkurs
-strona www
+# Mediapp_konkurs
+ hack heroes konkurs
