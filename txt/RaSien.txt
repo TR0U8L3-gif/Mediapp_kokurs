@@ -1,16 +1,1 @@
 How you feel data
-Oct 24
-1
-bad
-Oct 24
-7
-not that bad
-Oct 24
-9
-git
-Oct 24
-1
-bad
-Oct 24
-9
-awesome
