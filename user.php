@@ -9,7 +9,9 @@
 
 		if(isset($_SESSION["feel_select"])){
 			unset($_SESSION["feel_select"]);
-			header("refresh: 1");
+			header("Pragma: no-cache"); // HTTP 1.0.
+			header("Expires: 0");
+			//header("refresh: 1");
     		exit();
 		}
 		
