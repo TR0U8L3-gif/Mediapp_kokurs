@@ -7,6 +7,12 @@
 	}
 	else{
 
+		if(isset($_SESSION["feel_select"])){
+			unset($_SESSION["feel_select"]);
+			header("refresh: 1");
+    		exit();
+		}
+		
         $name = $_SESSION['name'];
         $surname = $_SESSION['surname'];
         $email = $_SESSION['email'];
@@ -193,6 +199,7 @@ var logged = false;
 				<?php
 				if($sex !="" && $age >0 && $height>0 && $weight>0){
 				$bmi = round($weight/($height*$height),5);
+
 				// lg g o r
 				if($age<=5){
 					if($bmi>20){
@@ -251,7 +258,7 @@ var logged = false;
 					}
 				}
 				else if($age<=15){
-					if($sex="male"){
+					if($sex=="male"){
 						if($bmi>27){
 							$p = "r";
 						}
@@ -281,7 +288,8 @@ var logged = false;
 					}
 				}
 				else if($age<=17){
-					if($sex="male"){
+
+					if($sex=="male"){
 						if($bmi>28){
 							$p = "r";
 						}
@@ -311,7 +319,7 @@ var logged = false;
 					}
 				}
 				else{
-					if($sex="male"){
+					if($sex=="male"){
 						if($bmi>29){
 							$p = "r";
 						}

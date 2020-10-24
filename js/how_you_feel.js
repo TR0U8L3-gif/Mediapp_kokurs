@@ -5,7 +5,12 @@ var date_feel = new Array();
 var how_feel = new Array();
 var comments_feel = new Array();
 
+var date= new Array();
+var how = new Array();
 
+window.onload = load();
+function load()
+{
 function ajax2() {
     return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest();
@@ -24,27 +29,43 @@ ajax2()
       var txt = result.split("\r\n");
       txt.toString();
       //console.log(txt);
-      if(txt.length>31){
-        length = 31;
+      var b = 18;
+      if(txt.length>b){
+        length = txt.length-b;
       }
       else{
-        length=txt.length;
+        length=1;
       }
-      for(var i = 1; i<length;i+=3){
+      
+      for(var i = length; i<txt.length;i+=3){
         date_feel[x]=txt[i];
         how_feel[x]=txt[i+1];
         comments_feel[x]=txt[i+2];
         x++;
-    }
+      }
+      console.log(date_feel);
+      console.log(how_feel);
+      x=0;
+      for(var i=date_feel.length; i>0; i--){
+        date[x]=date_feel[i-1];
+        x++;
+      }
+      x=0;
+      for(var i=how_feel.length; i>0; i--){
+        how[x]=how_feel[i-1];
+        x++;
+      }
+      console.log(date);
+      console.log(how);
 
     const chart = document.getElementById("lineChart");
     let lineChart = new Chart(chart,{
     type: 'line',
     data: {
-      labels: date_feel,
+      labels: date,
       datasets: [{
           label: 'How you feel',
-          data: how_feel,
+          data: how,
           borderWidth: 1 
       }]
     },
@@ -65,7 +86,7 @@ ajax2()
     });
 
   });
-
+}
 
 
 
